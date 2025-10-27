@@ -9,8 +9,6 @@
     
 }
 
-/*Transition*/
-
 /* Base Button Styles (applies to all buttons) */
 nav button::after {
   content: none !important;
@@ -39,8 +37,9 @@ button.dark,
   background-color: var(--blue);
   color: white;
   border: 1px solid transparent;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
-
 button.dark:hover,
 .btn.dark:hover,
 .button.dark:hover {
@@ -75,8 +74,7 @@ button.light:hover,
 .center {
   display: block;
   text-align: center;
-  margin-left: 50%;
-  margin: 40px auto;
+  margin:   50px auto;
 }
 
 /* Left-aligned */
@@ -121,6 +119,7 @@ header {
   position: sticky;   /* stays on top while scrolling */
   top: 0;
   z-index: 1000;      /* keeps it above other elements */
+  
 }
 
 /* --- LOGO --- */
@@ -133,10 +132,11 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 15px;
   margin: 0;
   padding: 0;
   align-items: center;
+  margin-right: 30px;
 }
 
 /* --- NAV LINKS --- */
@@ -150,7 +150,11 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease, transform 0.3s ease;
-  padding-bottom: 4px; /* space for underline */}
+  padding-bottom: 4px; /* space for underline */
+}
+nav :last-child{
+  margin-left: 20px;
+}
 
 /* --- HOVER UNDERLINE FROM CENTER --- */
 nav a:not(:has(button))::after {
@@ -193,7 +197,7 @@ nav a:not(:has(button)):hover {
 }
 
 /* --- MOBILE RESPONSIVE --- */
-@media (max-width: 1000px) {
+@media (max-width: 1175px) {
 
   /* hide nav links by default */
 
@@ -207,6 +211,7 @@ nav a:not(:has(button)):hover {
     width: 200px;
     padding: 20px;
     display: none;
+    gap: 35px;
   }
   .logo{
     width: 200px;
@@ -251,6 +256,7 @@ nav a:not(:has(button)):hover {
   width: auto;      /* keep original size */
   height: auto;
   z-index: 3;       /* above backgrounds but below text if needed */
+  margin-right: 10px;
 }
 .vector-design2 {
   position: static;
@@ -278,10 +284,11 @@ nav a:not(:has(button)):hover {
 /* LEFT SIDE (TEXT) */
 .hero-left {
   max-width: 578px;
+  margin-left: 40px;
 }
 
 .hero-left h1 {
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -320,6 +327,7 @@ nav a:not(:has(button)):hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 60px;
 }
 
 .image-stack {
@@ -391,8 +399,8 @@ nav a:not(:has(button)):hover {
   border: none;
   cursor: pointer;
   pointer-events: auto;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -410,6 +418,10 @@ nav a:not(:has(button)):hover {
 .arrow.right img{
 width: 55px;
 height: 55px;
+}
+.arrow.left img{
+width: 59px;
+height: 59px;
 }
 .arrow:hover img {
   transform: scale(1.1);
@@ -437,26 +449,10 @@ height: 55px;
   }
 }
 
-/* Medium screens (1000–1199px) */
-@media (max-width: 1199px) and (min-width: 1000px) {
-  .hero-right {
-    max-width: 280px;
-  }
 
-  .stack-image {
-    width: 220px;
-  }
-
-  .arrow.left {
-    margin-left: -45px;
-  }
-  .arrow.right {
-    margin-right: -45px;
-  }
-}
 
 /* Small screens (<1000px): stack vertically */
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .hero {
     flex-direction: column;
     align-items: center;
@@ -544,18 +540,19 @@ height: 55px;
   font-size: 1.05rem;
   margin-bottom: 10px;
 }
-
-/*Team section*/
+.why-nuwa button{
+  margin-bottom: -20px;
+}
 
 /* TEAM SECTION */
-
-
 /* CONTAINER */
 .team-section {
   display: flex;
   position: relative;
   height: 600px;
   overflow: hidden;
+  background-color: white;
+  align-items: center;
 }
 
 /* LEFT SEMI-TRANSPARENT PANEL */
@@ -573,7 +570,8 @@ height: 55px;
   align-items: flex-start;
   text-align: left;
   padding-left: 80px;
-  z-index: 2;                       /* ensure it's above images */
+  z-index: 2; 
+  height: 90%;                      /* ensure it's above images */
 }
 
 /* TEXT STYLING */
@@ -617,8 +615,10 @@ height: 55px;
   flex: 1;
   height: 100%;
   overflow: hidden;
+  margin-top: -50px;
   position: relative;
   z-index: 1;
+  height: 70%;
 }
 
 .team-track {
@@ -659,12 +659,17 @@ height: 55px;
     position: relative;
     width: 100%;
     padding: 40px;
+        margin-left: 40px;
+
   }
 
   .team-track img {
     width: 45%;
     min-width: 180px;
     height: auto;
+  }
+  .team-section .explore-btn{
+    margin-bottom: 40px;
   }
 }
 
@@ -673,24 +678,24 @@ height: 55px;
   align-items: center;
   padding: 80px 100px;
   background-color: var(--blue);
-  color: white
+  color: white;
 }
 
 .main-news h1 {
-  font-family: Franklin Gothic Demi, sans-serif;
-  font-size: 2rem;
+  font-family: 'Franklin Gothic Demi', sans-serif;
+  font-size: 3rem;
   margin-top: 20px;
   margin-bottom: 1px;
   text-align: left;
+  letter-spacing: 6px;
 }
 
 .main-news h3 {
-  font-family: Franklin Gothic Book, sans-serif;
+  font-family: 'Franklin Gothic Book', sans-serif;
 font-weight: 400;
-font-style: Italic;
 font-size: 16px;
 line-height: 100%;
-letter-spacing: 20%;
+letter-spacing: 3px;
 margin-top: 3px;
 
 }
@@ -731,6 +736,7 @@ margin-top: 3px;
   text-decoration: none;
   display: inline-block;
   line-height: 1.4;
+  font-size: 24px;
 }
 
 .main-news-title:hover {
@@ -768,11 +774,15 @@ margin-top: 3px;
   }
 }
 
+.main-news button{
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
 /*contact-us section*/
 
 .contact-us h1 {
   font-family: 'Franklin Gothic Demi', sans-serif;
-  
+  font-size: 3rem;
   font-weight: bold;
   text-align: center;
   color: #263D5B;
@@ -788,9 +798,16 @@ margin-top: 3px;
   height: 72px;
   display: block;
   margin: 50px auto 0;
-  margin-top: 0px;
+  margin-top: 20px;
   text-align: center;
-  font-size: 12px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.contact-us button{
+  margin-top: 60px;
+  margin-bottom: 60px;
+
 }
 @media (max-width: 600px){
   .contact-us p{
@@ -855,6 +872,7 @@ margin-top: 3px;
   padding: 0;
   margin: 0;
   margin-top: 20px;
+  align-items: flex-start;
 }
 
 .main-nav li a {
@@ -864,14 +882,9 @@ margin-top: 3px;
   transition: color 0.3s ease;
 }
 
-.main-nav li a:hover {
-  color: var(--orangeNuwa);
-}
-
 /* NEWSLETTER */
 .newsletter {
-  margin: 40px 0;
-  margin-top: -80px;
+  margin-top: -50px;
 }
 
 .newsletter p {
@@ -934,6 +947,7 @@ margin-top: 3px;
   padding: 0;
   margin: 0;
   flex-wrap: wrap;
+  
 }
 
 .secondary-nav li::after {
@@ -958,7 +972,7 @@ margin-top: 3px;
 /* RESPONSIVE FOOTER NAV */
 
 /* Medium screens: hide nav links */
-@media (max-width: 1000px) {
+@media (max-width: 1175px) {
   .footer{
     margin-left: -50px;
     align-items: flex-start;
@@ -1020,10 +1034,12 @@ margin-top: 3px;
   font-size: 12px;
   background-color: var(--blue);
   color: white;
-  margin-top: -10px;
-  height: 40px;
+  margin-top: -20px;
 }
 
+.copyright p{
+  padding: 5px;
+}
 
 /*about page*/
 .about-hero {
@@ -1046,7 +1062,7 @@ margin-top: 3px;
 /* Ensure both texts have identical baseline metrics */
 .about-hero h1,
 .about-hero .typing-text {
-  font-family: 'Poppins', sans-serif;  /* use the same font family */
+  font-family: 'Franklin Gothic Book', sans-serif;  /* use the same font family */
   font-size: 4rem;
   line-height: 1.1;
   font-weight: 700;
@@ -1410,7 +1426,7 @@ margin-top: 3px;
   font-family: 'Franklin Gothic Demi', sans-serif;
   font-weight: bold;
   letter-spacing: 6px;
-  font-size: 36px;
+  font-size: 46px;
 
 }
 .about-contact-us p{
@@ -1422,6 +1438,15 @@ margin-top: 3px;
   text-align: center;
   font-size: 16px;
   letter-spacing: 4px;
+}
+@media (max-width: 560px){
+  .about-contact-us{
+    height: auto;
+    padding: 40px 20px;
+  }
+  .about-contact-us button.light{
+    margin-bottom: 10px;
+  }
 }
 
 
@@ -1602,6 +1627,11 @@ margin-top: 3px;
     max-width: 100%;
   }
 }
+.about-contact-us button{
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+/* Apply Section */
 
 .apply{
   padding-left: 80px;
@@ -1702,7 +1732,7 @@ margin-top: 3px;
 
 .team-member h3 {
   font-family: 'Franklin Gothic Demi', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--blue);
   font-weight: bold;
 }
@@ -1784,49 +1814,50 @@ margin-top: 3px;
 /* Card styling */
 .company-card {
   background-color: #f3f3f3;
-  border-radius: 8px;
-  overflow: hidden; /* ensures image corners match card */
-  padding: 0;       /* remove padding so image aligns perfectly */
-  display: flex;
-  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.company-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+/* Hover effect: only the image zooms out */
+.company-card:hover .company-img img {
+  transform: scale(1.08);
 }
 
-/* Image section */
 .company-img {
   width: 100%;
   height: 250px;
   overflow: hidden;
-  flex-shrink: 0;
 }
 
 .company-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* keeps correct proportions */
-  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-/* Text section */
+/* Text container */
 .company-card-content {
-  padding: 20px; /* text padding inside the card */
+  padding: 25px 35px; /* wider padding for right shift */
+  text-align: left;
 }
 
 .company-card-content h3 {
-  font-weight: 600;
-  margin: 0 0 8px;
-  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
 }
 
 .company-card-content p {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: #555;
   margin: 0;
+}
+
+/* Optional: subtle card shadow when hovered */
+.company-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -1844,6 +1875,10 @@ margin-top: 3px;
   }
 }
 
+.companies button{
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
 
 /* News Section */
 .news {
@@ -1958,4 +1993,8 @@ margin-top: 3px;
   }
 }
 
+.news button{
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
 
